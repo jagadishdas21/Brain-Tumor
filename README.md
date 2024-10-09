@@ -40,16 +40,16 @@ bash $ cd brain-tumor-detection
 
 ## Results
 The CNN model achieved the following results during evaluation:
-
-Accuracy: 97%
-Precision: 95%
-Recall: 93%
-F1-Score: 93%
+- Accuracy: 97%
+- Precision: 95%
+- Recall: 93%
+- F1-Score: 93%
 
 The model was able to successfully identify brain tumors from MRI images with a high level of accuracy and reliability. Below is a sample output of the confusion matrix and ROC curve from the test set:
 
-Confusion Matrix: Shows true positive, true negative, false positive, and false negative rates.
-ROC Curve: Demonstrates the trade-off between true positive rate and false positive rate, with an AUC score of 0.96.
+1. Confusion Matrix: Shows true positive, true negative, false positive, and false negative rates.
+
+2. ROC Curve: Demonstrates the trade-off between true positive rate and false positive rate, with an AUC score of 0.97.
 These results show that the CNN model is effective in detecting brain tumors, making it a promising tool for medical professionals.
 
 ** Contributions are welcome! If you have suggestions or improvements, please feel free to open an issue or submit a pull request.
