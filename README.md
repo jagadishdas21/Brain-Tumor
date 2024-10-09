@@ -1,9 +1,7 @@
 # Brain Tumor Detection
-
 This project aims to detect brain tumor directly from the MRI images of patients using Convolutional Neural Network (CNN).
 
 ## Overview
-
 Brain tumors can pose significant health risks, and early detection plays a crucial role in treatment and prognosis. This project focuses on building a deep learning model using Convolutional Neural Networks (CNN) to detect brain tumors directly from MRI images. By processing these images, the model can identify patterns and features associated with tumors, aiding in quicker diagnosis and potentially improving patient outcomes.
 
 The goal of the project is to automate the detection process, reducing the need for manual analysis by healthcare professionals and providing a reliable tool for early tumor identification.
@@ -31,10 +29,9 @@ The dataset used in this project is sourced from Kaggle datasets.
 5. Evaluation and Testing: After training, the model is tested on unseen MRI images to assess its real-world performance. Confusion matrix and ROC curve analysis are conducted to measure the model's predictive capabilities.
 
 ## Installation
-
+To run this project, you will need to have Python installed. You can install the required libraries using pip: cmd > pip install numpy matplotlib scikit-learn tensorflow keras
 
 ## Usage
-
 1. Clone this repository to your local machine:
 bash $ git clone https://github.com/jagadishdas21/brain-tumor-detection.git
 3. Navigate to the project directory:
@@ -42,7 +39,6 @@ bash $ cd brain-tumor-detection
 5. Open the Jupyter notebook or Python script and run the code to see the predictions.
 
 ## Results
-
 The CNN model achieved the following results during evaluation:
 
 Accuracy: 97%
