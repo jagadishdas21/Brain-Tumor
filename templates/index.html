@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 28px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            margin: 20px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .positive {
+            color: #e74c3c;
+        }
+
+        .negative {
+            color: #27ae60;
+        }
+
+        .loading {
+            color: #f39c12;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Brain Tumor Detection</h2>
+        <p>Please upload an MRI image to check if a tumor is detected.</p>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="file" required />
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jagadish Das | All rights reserved.</p>
+        <p>Designed & Developed by Jagadish Das</p>
+        <a href="mailto:jagadishdas.nitrkl@gmail.com">Contact Me</a>
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var formData = new FormData();
+            var fileInput = document.getElementById('fileInput');
+            formData.append('file', fileInput.files[0]);
+
+            // Display a loading message while the prediction is being processed
+            var resultElement = document.getElementById('result');
+            resultElement.classList.remove('positive', 'negative', 'loading');
+            resultElement.innerHTML = 'Processing...';
+            resultElement.classList.add('loading');
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Check prediction and display the appropriate result
+                    resultElement.classList.remove('loading');
+                    if (data.prediction === 1) {
+                        resultElement.innerHTML = 'Tumor Detected (Positive)';
+                        resultElement.classList.add('positive');
+                    } else {
+                        resultElement.innerHTML = 'No Tumor Detected (Negative)';
+                        resultElement.classList.add('negative');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultElement.innerHTML = 'An error occurred. Please try again.';
+                    resultElement.classList.remove('loading');
+                });
+        });
+    </script>
+</body>
+
+</html>
