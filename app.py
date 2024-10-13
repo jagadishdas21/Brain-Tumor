@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Load your saved model using a relative path
+# Load your saved model
 model = load_model('model.keras')  # Ensure this file is in the root of your project directory
 
 def preprocess_image(image):
@@ -17,6 +17,10 @@ def preprocess_image(image):
     img = np.array(img)
     img = img.reshape(1, 128, 128, 3) / 255.0  # Normalize and reshape
     return img
+
+@app.route('/')
+def index():
+    return jsonify({'message': 'Brain Tumor Prediction API is running'}), 200
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -29,7 +33,6 @@ def predict():
         return jsonify({'error': 'No selected file'}), 400
     
     try:
-        # Open the image
         image = Image.open(io.BytesIO(file.read())).convert('RGB')  # Ensure image is in RGB format
         preprocessed_image = preprocess_image(image)
 
