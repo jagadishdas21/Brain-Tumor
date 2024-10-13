@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brain Tumor Detection</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -54,6 +55,21 @@
             background-color: #2980b9;
         }
 
+        #preview {
+            margin: 20px 0;
+            max-width: 100%;
+            max-height: 300px;
+            display: none; /* Hidden by default */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .image-preview-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         #result {
             font-size: 18px;
             margin-top: 20px;
@@ -98,7 +114,10 @@
         <p>Please upload an MRI image to check if a tumor is detected.</p>
 
         <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="fileInput" name="file" required />
+            <input type="file" id="fileInput" name="file" accept="image/*" required />
+            <div class="image-preview-container">
+                <img id="preview" src="" alt="Image Preview" />
+            </div>
             <button type="submit">Submit</button>
         </form>
 
@@ -108,10 +127,28 @@
     <footer>
         <p>&copy; 2024 Jagadish Das | All rights reserved.</p>
         <p>Designed & Developed by Jagadish Das</p>
-        <a href="mailto:jagadishdas.nitrkl@gmail.com">Contact Me</a>
+        <a href="jagadishdas.nitrkl@gmail.com">Contact Me</a>
     </footer>
 
     <script>
+        // Image preview functionality
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            var file = event.target.files[0];
+            var preview = document.getElementById('preview');
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+            }
+        });
+
+        // Form submission logic
         document.getElementById('uploadForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
