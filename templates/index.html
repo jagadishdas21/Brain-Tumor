@@ -15,21 +15,25 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         h2 {
             color: #2c3e50;
-            font-size: 28px;
+            font-size: 3rem; /* Adjust heading size for desktop */
+            text-align: center;
         }
 
         .container {
             background-color: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 90%; /* Responsive width */
+            max-width: 400px;
             text-align: center;
         }
 
@@ -39,16 +43,18 @@
             width: 100%;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-size: 1rem; /* Standardized font size */
         }
 
         button {
             background-color: #3498db;
             color: white;
-            padding: 10px 20px;
+            padding: 10px;
+            width: 100%; /* Full width */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1.2rem;
         }
 
         button:hover {
@@ -71,7 +77,7 @@
         }
 
         #result {
-            font-size: 18px;
+            font-size: 1rem;
             margin-top: 20px;
             padding: 10px;
             background-color: #ecf0f1;
@@ -93,7 +99,7 @@
         footer {
             margin-top: 30px;
             text-align: center;
-            font-size: 14px;
+            font-size: 0.9rem;
             color: #888;
         }
 
@@ -104,6 +110,45 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem; /* Smaller font size on mobile */
+            }
+
+            input[type="file"] {
+                font-size: 0.9rem; /* Slightly smaller input text */
+            }
+
+            button {
+                font-size: 1rem; /* Adjust button size for mobile */
+            }
+
+            #result {
+                font-size: 0.9rem; /* Adjust result size for mobile */
+            }
+
+            footer {
+                font-size: 0.8rem; /* Adjust footer text size */
+            }
+        }
+
+        /* Media query for large desktop screens */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 600px; /* Slightly wider on large screens */
+            }
+
+            h2 {
+                font-size: 3.5rem; /* Larger heading for big screens */
+            }
+
+            input[type="file"],
+            button {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -127,7 +172,7 @@
     <footer>
         <p>&copy; 2024 Jagadish Das | All rights reserved.</p>
         <p>Designed & Developed by Jagadish Das</p>
-        <a href="jagadishdas.nitrkl@gmail.com">Contact Me</a>
+        <a href="mailto:jagadishdas.nitrkl@gmail.com">Contact Me</a>
     </footer>
 
     <script>
