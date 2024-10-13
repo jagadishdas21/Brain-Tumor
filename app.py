@@ -8,8 +8,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Load your saved model
-model = load_model('D:\\Research Projects\\Projects\\Brain-Tumor\\Project\\model.keras')
+# Load your saved model using a relative path
+model = load_model('model.keras')  # Ensure this file is in the root of your project directory
 
 def preprocess_image(image):
     img = image.resize((128, 128))  # Adjust size as per your model
@@ -47,4 +47,4 @@ def predict():
         return jsonify({'error': str(e)}), 500  # Handle unexpected errors
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
