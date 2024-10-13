@@ -3,13 +3,13 @@ from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
 import io
-
 from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
 
 # Load your saved model
-model = load_model('my_model.keras')
+model = load_model('D:\\Research Projects\\Projects\\Brain-Tumor\\Project\\model.keras')
 
 def preprocess_image(image):
     img = image.resize((128, 128))  # Adjust size as per your model
@@ -20,26 +20,31 @@ def preprocess_image(image):
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files:
-        return jsonify({'error': 'No file part'})
+        return jsonify({'error': 'No file part'}), 400
     
     file = request.files['file']
 
     if file.filename == '':
-        return jsonify({'error': 'No selected file'})
+        return jsonify({'error': 'No selected file'}), 400
     
     try:
         # Open the image
-        image = Image.open(io.BytesIO(file.read()))
+        image = Image.open(io.BytesIO(file.read())).convert('RGB')  # Ensure image is in RGB format
         preprocessed_image = preprocess_image(image)
 
         # Make prediction
         prediction = model.predict(preprocessed_image)
-        predicted_class = np.argmax(prediction, axis=1)[0]
 
-        return jsonify({'prediction': int(predicted_class)})
-    
+        # Log the raw prediction for debugging
+        print("Raw prediction:", prediction)
+
+        predicted_class = np.argmax(prediction, axis=1)[0]
+        confidence = np.max(prediction)  # Get confidence level of prediction
+
+        return jsonify({'prediction': int(predicted_class), 'confidence': float(confidence)}), 200  # Return prediction with confidence
+
     except Exception as e:
-        return jsonify({'error': str(e)})
+        return jsonify({'error': str(e)}), 500  # Handle unexpected errors
 
 if __name__ == '__main__':
     app.run(debug=True)
