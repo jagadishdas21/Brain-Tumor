@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
@@ -18,10 +18,12 @@ def preprocess_image(image):
     img = img.reshape(1, 128, 128, 3) / 255.0  # Normalize and reshape
     return img
 
+# Serve the homepage
 @app.route('/')
 def index():
-    return jsonify({'message': 'Brain Tumor Prediction API is running'}), 200
+    return render_template('index.html')  # This will serve your front-end index.html
 
+# Handle the prediction request
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files:
