@@ -8,33 +8,33 @@ import os
 import logging
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for CORS
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Enable logging for debugging
+
 logging.basicConfig(level=logging.DEBUG)
 
-# Load your saved model with absolute path
+
 model_path = os.path.join(os.getcwd(), 'model.keras')
 model = load_model(model_path)
 
 def preprocess_image(image):
-    img = image.resize((128, 128))  # Resize image to the input size your model expects
+    img = image.resize((128, 128))
     img = np.array(img)
-    img = img.reshape(1, 128, 128, 3) / 255.0  # Normalize image
+    img = img.reshape(1, 128, 128, 3) / 255.0
     return img
 
-# Serve the homepage
+
 @app.route('/')
 def index():
-    return render_template('index.html')  # Serve your front-end index.html
+    return render_template('index.html')
 
-# Handle the prediction request
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
         logging.info("Prediction request received")
 
-        # Check if a file was uploaded
+  
         if 'file' not in request.files:
             logging.error("No file part in request")
             return jsonify({'error': 'No file part'}), 400
@@ -42,23 +42,23 @@ def predict():
         file = request.files['file']
         logging.info(f"Received file: {file.filename}")
 
-        # Check if a file was selected
+
         if file.filename == '':
             logging.error("No selected file")
             return jsonify({'error': 'No selected file'}), 400
         
-        # Open and preprocess the image
+  
         image = Image.open(io.BytesIO(file.read())).convert('RGB')
         logging.info("Image loaded successfully")
         
         preprocessed_image = preprocess_image(image)
         logging.debug(f"Preprocessed image shape: {preprocessed_image.shape}")
 
-        # Make prediction
+
         prediction = model.predict(preprocessed_image)
         logging.info(f"Raw prediction: {prediction}")
 
-        # Get predicted class and confidence level
+
         predicted_class = np.argmax(prediction, axis=1)[0]
         confidence = np.max(prediction)
 
