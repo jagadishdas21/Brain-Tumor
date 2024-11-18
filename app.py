@@ -68,8 +68,7 @@ def predict():
     
     except Exception as e:
         logging.error(f"Error during prediction: {str(e)}")
-        return jsonify({'error': str(e)}), 500  # Handle unexpected errors
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    # Ensure that the app runs on Render or any platform with specified port
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
