@@ -52,6 +52,7 @@ The model was able to successfully identify brain tumors from MRI images with a 
 2. ROC Curve: Demonstrates the trade-off between true positive rate and false positive rate, with an AUC score of 0.97.
 These results show that the CNN model is effective in detecting brain tumors, making it a promising tool for medical professionals.
 
-** Contributions are welcome! If you have suggestions or improvements, please feel free to open an issue or submit a pull request.
+## Demonstration
+https://github.com/user-attachments/assets/fbca20cc-e4ae-4798-bd83-4c9497481dd5
 
- 
+** Contributions are welcome! If you have suggestions or improvements, please feel free to open an issue or submit a pull request.
