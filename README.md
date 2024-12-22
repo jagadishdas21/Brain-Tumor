@@ -18,9 +18,11 @@ The goal of the project is to automate the detection process, reducing the need 
 The dataset used in this project is sourced from Kaggle datasets.
 
 1. Tumor
+   
    ![Tr-pi_0355](https://github.com/user-attachments/assets/945a1fa9-8a80-4be7-b3e1-59908f8ac7e8)
 
-3. Non-Tumor
+2. Non-Tumor
+   
    ![Tr-no_0173](https://github.com/user-attachments/assets/29217b9a-b2fc-484f-9fa0-b3d386f98f9a)
 
 ## Methodology
@@ -54,10 +56,12 @@ The CNN model achieved the following results during evaluation:
 The model was able to successfully identify brain tumors from MRI images with a high level of accuracy and reliability. Below is a sample output of the confusion matrix and ROC curve from the test set:
 
 1. Confusion Matrix: Shows true positive, true negative, false positive, and false negative rates.
+   
    ![output](https://github.com/user-attachments/assets/3c9e5501-7a87-41d0-a06e-aa90e3eb33e9)
 
 3. ROC Curve: Demonstrates the trade-off between true positive rate and false positive rate, with an AUC score of 0.97.
 These results show that the CNN model is effective in detecting brain tumors, making it a promising tool for medical professionals.
+
 ![output1](https://github.com/user-attachments/assets/f7460fc0-acc1-4462-bd21-78478c063ea4)
 
 ## Demonstration
