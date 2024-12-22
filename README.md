@@ -23,7 +23,7 @@ The dataset used in this project is sourced from Kaggle datasets.
 
 2. Non-Tumor
    
-   ![Tr-no_0173](https://github.com/user-attachments/assets/29217b9a-b2fc-484f-9fa0-b3d386f98f9a)
+   ![Te-noTr_0004](https://github.com/user-attachments/assets/be565426-635e-430b-a649-c218d78574ad)
 
 ## Methodology
 1. Data Preprocessing: The MRI images are first processed for normalization and resizing to ensure uniformity across the dataset. Techniques such as grayscale conversion and noise reduction are applied to enhance image quality and clarity.
