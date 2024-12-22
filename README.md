@@ -19,7 +19,7 @@ The dataset used in this project is sourced from Kaggle datasets.
 
 1. Tumor
    
-   ![Tr-pi_0355](https://github.com/user-attachments/assets/945a1fa9-8a80-4be7-b3e1-59908f8ac7e8)
+   ![Te-me_0271](https://github.com/user-attachments/assets/52502769-b84b-4042-9088-cde653b78b52)
 
 2. Non-Tumor
    
