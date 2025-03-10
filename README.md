@@ -25,42 +25,68 @@ The dataset used in this project is sourced from Kaggle datasets.
    
    ![Te-noTr_0004](https://github.com/user-attachments/assets/be565426-635e-430b-a649-c218d78574ad)
 
-## Methodology
-1. Data Preprocessing: The MRI images are first processed for normalization and resizing to ensure uniformity across the dataset. Techniques such as grayscale conversion and noise reduction are applied to enhance image quality and clarity.
-
-2. Model Architecture: The CNN model is designed to extract features from MRI images through multiple convolutional layers followed by pooling layers, which help in reducing dimensionality while retaining essential information. Fully connected dense layers are added at the end to make the final classification decision.
-
-3. Training and Validation: The model is trained using labeled MRI images (tumor and non-tumor). The dataset is split into training and validation sets, and the model's performance is evaluated using metrics like accuracy, precision, recall, and F1-score.
-
-4. Hyperparameter Tuning: Various hyperparameters, including learning rate, batch size, and number of epochs, are optimized to improve model accuracy and generalization.
-
-5. Evaluation and Testing: After training, the model is tested on unseen MRI images to assess its real-world performance. Confusion matrix and ROC curve analysis are conducted to measure the model's predictive capabilities.
-
-## Installation
-To run this project, you will need to have Python installed. You can install the required libraries using pip: cmd > pip install numpy matplotlib scikit-learn tensorflow keras
-
-## Usage
-1. Clone this repository to your local machine:
-bash $ git clone https://github.com/jagadishdas21/brain-tumor-detection.git
-3. Navigate to the project directory:
-bash $ cd brain-tumor-detection
-5. Open the Jupyter notebook or Python script and run the code to see the predictions.
 
 ## Results
-The CNN model achieved the following results during evaluation:
-- Accuracy: 97%
-- Precision: 95%
-- Recall: 93%
-- F1-Score: 93%
 
-The model was able to successfully identify brain tumors from MRI images with a high level of accuracy and reliability. Below is a sample output of the confusion matrix and ROC curve from the test set:
+The model was able to successfully identify brain tumors from MRI images with a high accuracy and precision. Below is a sample output of the confusion matrix and accuracy/loss curves from the test set:
 
-1. Confusion Matrix: Shows true positive, true negative, false positive, and false negative rates.
-   
+1. # Confusion Matrix Analysis  
+
+This confusion matrix represents the performance of a **binary classification model**, where:  
+
+- **Class 0** represents one category (e.g., `"No Tumor"` or `"Negative"`).  
+- **Class 1** represents the other category (e.g., `"Tumor Present"` or `"Positive"`).  
+
+(a) Breakdowns
+
+| Metric  | Value | Description |
+|---------|-------|-------------|
+| **True Positives (TP)**  | 296 | Model correctly predicted Class 1 when it was actually Class 1. |
+| **True Negatives (TN)**  | 306 | Model correctly predicted Class 0 when it was actually Class 0. |
+| **False Positives (FP)**  | 3   | Model incorrectly predicted Class 1 when it was actually Class 0 (**Type I Error**). |
+| **False Negatives (FN)**  | 6   | Model incorrectly predicted Class 0 when it was actually Class 1 (**Type II Error**). |
+
+(b) Performance Metrics  
+
+- **Accuracy** =  
+  \[
+  \frac{TP + TN}{TP + TN + FP + FN} = \frac{296 + 306}{296 + 306 + 3 + 6} = 98.6\%
+  \]  
+  _(High accuracy, meaning the model correctly classifies most cases.)_  
+
+- **Precision (Positive Predictive Value, PPV)** =  
+  \[
+  \frac{TP}{TP + FP} = \frac{296}{296 + 3} = 99.0\%
+  \]  
+  _(High precision, meaning very few false positives.)_  
+
+- **Recall (Sensitivity, True Positive Rate, TPR)** =  
+  \[
+  \frac{TP}{TP + FN} = \frac{296}{296 + 6} = 98.0\%
+  \]  
+  _(High recall, meaning very few false negatives.)_  
+
+- **F1 Score** =  
+  \[
+  2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 98.5\%
+  \]  
+  _(Strong balance between precision and recall.)_  
+
+This model demonstrates **high accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
+
    ![output](https://github.com/user-attachments/assets/3c9e5501-7a87-41d0-a06e-aa90e3eb33e9)
 
-3. ROC Curve: Demonstrates the trade-off between true positive rate and false positive rate, with an AUC score of 0.97.
-These results show that the CNN model is effective in detecting brain tumors, making it a promising tool for medical professionals.
+2. # Accuracy/Loss Curve Analysis
+
+(a) Left Graph – Model Accuracy:
+The training accuracy (blue line) starts at 84.93% and increases steadily, reaching 98.79% by the final epoch.
+The validation accuracy (orange line) begins with 70.87% but improves significantly, closely matching the training accuracy at around 98.53%.
+This indicates that the model is learning effectively without major signs of overfitting.
+
+(b) Right Graph – Model Loss:
+The training loss (blue line) starts moderately high and decreases steadily, nearing zero as the epochs progress.
+The validation loss (orange line) begins very high (~8), but drops significantly within the first few epochs and stabilizes near the training loss.
+The alignment of training and validation loss suggests good generalization, meaning the model is learning patterns well without excessive memorization.
 
 ![output1](https://github.com/user-attachments/assets/f7460fc0-acc1-4462-bd21-78478c063ea4)
 
