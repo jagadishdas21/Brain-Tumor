@@ -77,12 +77,12 @@ This model demonstrates **high accuracy, precision, recall, and F1-score**, indi
 
    ![output1](https://github.com/user-attachments/assets/f7460fc0-acc1-4462-bd21-78478c063ea4)
 
-(a) Left Graph – Model Accuracy:
+(a) Left Graph - Model Accuracy:
 The training accuracy (blue line) starts at 84.93% and increases steadily, reaching 98.79% by the final epoch.
 The validation accuracy (orange line) begins with 70.87% but improves significantly, closely matching the training accuracy at around 98.53%.
 This indicates that the model is learning effectively without major signs of overfitting.
 
-(b) Right Graph – Model Loss:
+(b) Right Graph - Model Loss:
 The training loss (blue line) starts moderately high and decreases steadily, nearing zero as the epochs progress.
 The validation loss (orange line) begins very high (~8), but drops significantly within the first few epochs and stabilizes near the training loss.
 The alignment of training and validation loss suggests good generalization, meaning the model is learning patterns well without excessive memorization.
