@@ -44,10 +44,10 @@ This confusion matrix represents the performance of a **binary classification mo
 
 | Metric  | Value | Description |
 |---------|-------|-------------|
-| **True Positives (TP)**  | 296 | Model correctly predicted Class 1 when it was actually Class 1. |
-| **True Negatives (TN)**  | 306 | Model correctly predicted Class 0 when it was actually Class 0. |
-| **False Positives (FP)**  | 3   | Model incorrectly predicted Class 1 when it was actually Class 0 (**Type I Error**). |
-| **False Negatives (FN)**  | 6   | Model incorrectly predicted Class 0 when it was actually Class 1 (**Type II Error**). |
+| **True Positives (TP)**  | 296 | Model correctly predicted Class 1 when it was actually Class 1 |
+| **True Negatives (TN)**  | 306 | Model correctly predicted Class 0 when it was actually Class 0 |
+| **False Positives (FP)**  | 3   | Model incorrectly predicted Class 1 when it was actually Class 0 |
+| **False Negatives (FN)**  | 6   | Model incorrectly predicted Class 0 when it was actually Class 1 |
 
 (b) Performance Metrics  
 
