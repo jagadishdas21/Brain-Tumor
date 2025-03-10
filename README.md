@@ -30,7 +30,7 @@ The dataset used in this project is sourced from Kaggle datasets.
 
 The model was able to successfully identify brain tumors from MRI images with a high accuracy and precision. Below is a sample output of the confusion matrix and accuracy/loss curves from the test set:
 
-1. # Confusion Matrix Analysis  
+1. ### Confusion Matrix Analysis  
 
 This confusion matrix represents the performance of a **binary classification model**, where:  
 
@@ -48,35 +48,35 @@ This confusion matrix represents the performance of a **binary classification mo
 
 (b) Performance Metrics  
 
-- **Accuracy** =  
-  \[
-  \frac{TP + TN}{TP + TN + FP + FN} = \frac{296 + 306}{296 + 306 + 3 + 6} = 98.6\%
-  \]  
-  _(High accuracy, meaning the model correctly classifies most cases.)_  
+**Accuracy**  
+\[
+\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} = \frac{296 + 306}{296 + 306 + 3 + 6} = 98.6\%
+\]  
+_(High accuracy, meaning the model correctly classifies most cases.)_  
 
-- **Precision (Positive Predictive Value, PPV)** =  
-  \[
-  \frac{TP}{TP + FP} = \frac{296}{296 + 3} = 99.0\%
-  \]  
-  _(High precision, meaning very few false positives.)_  
+**Precision (Positive Predictive Value, PPV)**  
+\[
+\text{Precision} = \frac{TP}{TP + FP} = \frac{296}{296 + 3} = 99.0\%
+\]  
+_(High precision, meaning very few false positives.)_  
 
-- **Recall (Sensitivity, True Positive Rate, TPR)** =  
-  \[
-  \frac{TP}{TP + FN} = \frac{296}{296 + 6} = 98.0\%
-  \]  
-  _(High recall, meaning very few false negatives.)_  
+**Recall (Sensitivity, True Positive Rate, TPR)**  
+\[
+\text{Recall} = \frac{TP}{TP + FN} = \frac{296}{296 + 6} = 98.0\%
+\]  
+_(High recall, meaning very few false negatives.)_  
 
-- **F1 Score** =  
-  \[
-  2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 98.5\%
-  \]  
-  _(Strong balance between precision and recall.)_  
+**F1 Score**  
+\[
+F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 98.5\%
+\]  
+_(Strong balance between precision and recall.)_  
 
 This model demonstrates **high accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
 
    ![output](https://github.com/user-attachments/assets/3c9e5501-7a87-41d0-a06e-aa90e3eb33e9)
 
-2. # Accuracy/Loss Curve Analysis
+2. ### Accuracy/Loss Curve Analysis
 
 (a) Left Graph – Model Accuracy:
 The training accuracy (blue line) starts at 84.93% and increases steadily, reaching 98.79% by the final epoch.
