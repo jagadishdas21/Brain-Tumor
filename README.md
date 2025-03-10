@@ -2,7 +2,7 @@
 This project aims to detect brain tumor directly from the MRI images of patients using Convolutional Neural Network.
 
 ## Project Overview
-Brain tumors can pose significant health risks, and early diagnosis plays a crucial role in treatment and prognosis. This project focuses on building a deep learning model using Convolutional Neural Networks (CNN) to detect brain tumors directly from MRI images. By processing these images, the model can identify patterns and features associated with tumors, aiding in quicker diagnosis and potentially improving patient outcomes. The goal of the project is to automate the detection process, reducing the need for manual analysis by healthcare professionals and providing a reliable tool for early tumor identification.
+Brain tumors can pose significant health risks, and early diagnosis plays a crucial role in prognosis and treatment . This project focuses on building a deep learning model using Convolutional Neural Networks (CNN) to detect brain tumors directly from MRI images. By processing these images, the model can identify patterns and features associated with tumors, aiding in quicker diagnosis and potentially improving patient outcomes. The goal of the project is to automate the detection process, reducing the need for manual analysis by healthcare professionals and providing a reliable tool for early tumor identification.
 
 ## Dataset
 The dataset used in this project is sourced from Kaggle datasets.
