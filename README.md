@@ -30,7 +30,8 @@ The dataset used in this project is sourced from Kaggle datasets.
 
 The model was able to successfully identify brain tumors from MRI images with a high accuracy and precision. Below is a sample output of the confusion matrix and accuracy/loss curves from the test set:
 
-1. Confusion Matrix Analysis  
+1. Confusion Matrix Analysis
+![output](https://github.com/user-attachments/assets/3c9e5501-7a87-41d0-a06e-aa90e3eb33e9)
 
 This confusion matrix represents the performance of a **binary classification model**, where:  
 
@@ -69,9 +70,8 @@ This confusion matrix represents the performance of a **binary classification mo
 
 This model demonstrates **high accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
 
-   ![output](https://github.com/user-attachments/assets/3c9e5501-7a87-41d0-a06e-aa90e3eb33e9)
-
 2. Accuracy/Loss Curve Analysis
+![output1](https://github.com/user-attachments/assets/f7460fc0-acc1-4462-bd21-78478c063ea4)
 
 (a) Left Graph – Model Accuracy:
 The training accuracy (blue line) starts at 84.93% and increases steadily, reaching 98.79% by the final epoch.
@@ -82,8 +82,6 @@ This indicates that the model is learning effectively without major signs of ove
 The training loss (blue line) starts moderately high and decreases steadily, nearing zero as the epochs progress.
 The validation loss (orange line) begins very high (~8), but drops significantly within the first few epochs and stabilizes near the training loss.
 The alignment of training and validation loss suggests good generalization, meaning the model is learning patterns well without excessive memorization.
-
-![output1](https://github.com/user-attachments/assets/f7460fc0-acc1-4462-bd21-78478c063ea4)
 
 ## Demonstration
 https://github.com/user-attachments/assets/fbca20cc-e4ae-4798-bd83-4c9497481dd5
