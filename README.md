@@ -18,7 +18,7 @@ The dataset used in this project is sourced from Kaggle.
 
 ## Results
 
-The model was able to successfully identify brain tumors from MRI images with a high accuracy and precision. Below is a sample output of the confusion matrix and accuracy/loss curves from the test set:
+The model was able to successfully identify brain tumors from MRI images with a good accuracy and precision. Below is a sample output of the confusion matrix and accuracy/loss curves from the test set:
 
 1. Confusion Matrix Analysis
 
@@ -60,7 +60,7 @@ This confusion matrix represents the performance of a **binary classification mo
   F1 Score = 2 × (Precision × Recall) / (Precision + Recall)  
   = **98.49%**
 
-This model demonstrates **high accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
+This model demonstrates **good accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
 
 2. Accuracy/Loss Curve Analysis
 
