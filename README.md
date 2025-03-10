@@ -48,29 +48,24 @@ This confusion matrix represents the performance of a **binary classification mo
 
 (b) Performance Metrics  
 
-**Accuracy**  
-\[
-\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN} = \frac{296 + 306}{296 + 306 + 3 + 6} = 98.6\%
-\]  
-_(High accuracy, meaning the model correctly classifies most cases.)_  
+- **Accuracy**  
+  Accuracy = (TP + TN) / (TP + TN + FP + FN)  
+  = (296 + 306) / (296 + 306 + 3 + 6)  
+  = **98.6%** *(High accuracy)*
 
-**Precision (Positive Predictive Value, PPV)**  
-\[
-\text{Precision} = \frac{TP}{TP + FP} = \frac{296}{296 + 3} = 99.0\%
-\]  
-_(High precision, meaning very few false positives.)_  
+- **Precision (Positive Predictive Value, PPV)**  
+  Precision = TP / (TP + FP)  
+  = 296 / (296 + 3)  
+  = **99.0%** *(High precision; very few false positives)*
 
-**Recall (Sensitivity, True Positive Rate, TPR)**  
-\[
-\text{Recall} = \frac{TP}{TP + FN} = \frac{296}{296 + 6} = 98.0\%
-\]  
-_(High recall, meaning very few false negatives.)_  
+- **Recall (Sensitivity, True Positive Rate, TPR)**  
+  Recall = TP / (TP + FN)  
+  = 296 / (296 + 6)  
+  = **98.0%** *(High recall; very few false negatives)*
 
-**F1 Score**  
-\[
-F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = 98.5\%
-\]  
-_(Strong balance between precision and recall.)_  
+- **F1 Score**  
+  F1 Score = 2 × (Precision × Recall) / (Precision + Recall)  
+  = **98.5%** *(Strong balance between precision and recall)* 
 
 This model demonstrates **high accuracy, precision, recall, and F1-score**, indicating that it performs well in distinguishing between the two classes.  
 
